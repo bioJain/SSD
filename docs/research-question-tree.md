@@ -179,6 +179,43 @@ a question and output is contextual, not decision-critical.
 - If stop, which failed gate is decisive and what rescue evidence would be needed?
 - What residual uncertainties must remain visible to the decision maker?
 
+## RQ7 — How will the analysis become a full deck and public entry-point series?
+
+- **Owners:** [JHA-181](https://linear.app/jha-res/issue/JHA-181/build-report-style-full-decision-deck) for the report-style deck; [JHA-182](https://linear.app/jha-res/issue/JHA-182/create-deck-linked-linkedin-article-series) for LinkedIn articles
+- **Output:** Canonical full decision deck plus a deck-linked public article series
+- **Feeds:** External portfolio use, interviews, public thought leadership and
+  discoverability of the full analysis
+- **Control:** JHA-179 cross-format release QA
+
+### RQ7.1 Full deck
+
+- What slide architecture best preserves the decision logic from RQ0–RQ6?
+- Which exhibits belong in the main narrative versus the appendix?
+- How will direct evidence, extrapolation, inference, uncertainty and negative
+  evidence remain visually distinct?
+- What stable session/chapter anchors will support article and interview reuse?
+- How will slide-level claims map to Evidence Ledger rows?
+
+### RQ7.2 LinkedIn article series
+
+- Which single thesis from each approved deck session is compelling enough to
+  stand alone while still creating interest in the full deck?
+- Which two to four evidence anchors demonstrate substance without reproducing
+  the complete matrices, models or gate scoring?
+- Which uncertainty or counterargument is necessary for a fair public summary?
+- How will each article stay within 45–55% of the reference article's
+  narrative-body length?
+- What additional value will the call to action promise in the full deck, and is
+  the destination/version actually available?
+
+### RQ7.3 Cross-format integrity
+
+- Do memo, deck and article use the same cutoff, terminology, numbers and decision
+  labels?
+- Can every article claim be traced to the same ledger row and deck session?
+- Does any simplification remove a caveat needed to interpret the claim?
+- Are deck and article versions recorded together in the release register?
+
 ## Coverage matrix
 
 | Downstream issue | RQ branch | Immediate output | Final deliverable section |
@@ -189,6 +226,8 @@ a question and output is contextual, not decision-critical.
 | JHA-146 | RQ4 | Patient-segmentation framework | Target population and opportunity |
 | JHA-149 | RQ5 | Treatment pathway and burden table | Current care, unmet need and comparator |
 | JHA-141 / synthesis | RQ0, RQ6 | Charter, integration and gate logic | Decision map and recommendation |
+| JHA-181 | RQ7.1, RQ7.3 | Report-style full decision deck | Canonical long-form portfolio artifact |
+| JHA-182 | RQ7.2, RQ7.3 | Deck-linked LinkedIn article series | Public entry points to full-deck sessions |
 
 ## Completion rule
 

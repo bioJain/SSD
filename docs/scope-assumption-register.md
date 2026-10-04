@@ -22,6 +22,8 @@ document, not a source of scientific facts.
 | S-10 | Source directory | Any future `00_source/` is immutable by default | Changes require separate explicit authorization |
 | S-11 | Missing evidence | Controlled five-state vocabulary | Missingness is not converted to zero, absence or failure |
 | S-12 | Deliverable logic | Question → workstream → output → final decision | Context without a decision mapping is non-critical |
+| S-13 | Canonical communication artifact | Report-style full decision deck owned by JHA-181 | Complete reasoning, matrices, models, caveats and methods live in the deck |
+| S-14 | Public entry-point artifact | Deck-linked LinkedIn article series owned by JHA-182 | One article per approved session/chapter; target 45–55% of the reference narrative body |
 
 ## Working assumptions and falsification tests
 
@@ -42,6 +44,8 @@ its falsification test is met.
 | A-10 | A useful commercial view can be scenario-based without false precision | Supports early decisions | Key denominator, adoption or access ranges are so unconstrained that scenarios are non-informative | Gate G6 |
 | A-11 | Defer is a temporary evidence state with a named catalyst | Keeps recommendations actionable | No realistic evidence or catalyst could change the failed or unknown gate | Final recommendation |
 | A-12 | Negative and missing evidence lead to different decisions | Prevents semantic errors | The underlying study and reporting context show the states were misclassified | Evidence Ledger |
+| A-13 | A report-style deck can serve as the canonical external long-form artifact | Aligns memo, exhibits and decision logic | Legibility or audience testing shows the format cannot carry required depth | JHA-181 deck |
+| A-14 | A half-length article can demonstrate rigor while preserving incremental deck value | Defines the public teaser layer | Reader review shows the article is either unintelligible alone or duplicates the deck | JHA-182 series |
 
 ## Unresolved choices
 
@@ -60,6 +64,9 @@ them. They must not be silently converted into assumptions.
 | U-08 | Minimum evidence for active program status | Require dated corroboration and record unclear otherwise | JHA-144 status protocol is approved | JHA-144 |
 | U-09 | Final integrated synthesis issue | Map framework to JHA-141 until assigned | Linear creates or designates synthesis issue | Project owner |
 | U-10 | Post-cutoff monitoring cadence | Do not update baseline automatically | Catalyst-watch process specifies cadence and owner | Competitive workstream |
+| U-11 | Final deck slide count | Do not impose an arbitrary count | JHA-181 outline and exhibit plan are approved | JHA-181 |
+| U-12 | Number of article sessions | One article per selected approved deck session; do not create placeholders | Stable deck chapter/session anchors are approved | JHA-181 / JHA-182 |
+| U-13 | Deck hosting and access method | Do not promise access until a stable destination exists | Release owner validates URL, version and permissions | JHA-182 / JHA-179 |
 
 ## Evidence controls
 
@@ -102,6 +109,22 @@ Every material ledger row must contain, when applicable:
 - Use adjacent-disease, non-US/EU5 or modality-analog evidence only with a written
   transfer rationale and limitation.
 - Never upgrade indirect evidence to direct evidence through repetition.
+
+## Cross-format release controls
+
+- The memo, deck and LinkedIn article must reuse stable Evidence Ledger identifiers.
+- The deck is the source for session/chapter structure; articles do not create a
+  competing narrative or independent numerical model.
+- Each article records its mapped deck session, deck version, ledger rows,
+  narrative-body word count, publication URL and publication date.
+- Article length must be 45–55% of the style reference's narrative body for each
+  session; the measurement method is recorded in the article checklist.
+- The public article includes at least one material uncertainty, negative result
+  or counterargument when relevant to its thesis.
+- Complete matrices, sensitivities, gate scoring, detailed methods and full source
+  apparatus remain accessible through the deck or its appendix.
+- Publication is blocked until the full-deck destination and access method are
+  valid and the mapped deck session has passed citation and visual QA.
 
 ## Change management
 

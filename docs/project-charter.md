@@ -110,6 +110,11 @@ The final synthesis must keep these perspectives distinct before integrating the
 7. Patient-segmentation framework and treatment-pathway map
 8. Integrated patient–modality decision map, gate assessment and
    advance/defer/stop recommendation
+9. Report-style full decision deck with editable source, PPTX/PDF exports,
+   slide-to-ledger mapping and methods appendix
+10. Deck-linked LinkedIn article series: one concise public article per approved
+    deck session/chapter, targeted at 45–55% of the reference article's
+    narrative-body length
 
 ## Inclusion and exclusion criteria
 
@@ -153,6 +158,26 @@ A recommendation cannot be **advance** when a critical gate is fail or not
 evaluable. A **defer** recommendation must name the evidence or catalyst that
 would change the result and the trigger for re-review.
 
+## Communication and release workflow
+
+The communication system has two deliberately different layers:
+
+1. **Canonical full deck — JHA-181.** The report-style deck contains the complete
+   cross-workstream narrative, matrices, decision-gate scoring, sensitivities,
+   counterarguments, methods and appendix. Stable session/chapter anchors make
+   the deck reusable for interviews, portfolio review and public distribution.
+2. **Public article layer — JHA-182.** Each approved deck session/chapter may
+   produce one LinkedIn article at 45–55% of the reference article's
+   narrative-body length. The article presents one thesis, two to four evidence
+   anchors, one material uncertainty and one decision implication, then directs
+   readers to the additional value in the full deck.
+
+The article must reuse the same Evidence Ledger rows and terminology as the deck.
+It may simplify presentation but may not remove a caveat required to interpret a
+claim. Complete matrices, models, scoring, source apparatus and cross-session
+recommendations remain in the full deck. Publication requires a valid deck
+destination, version and access method.
+
 ## Evidence language
 
 ### Claim types
@@ -186,6 +211,8 @@ absence or failure without justification.
 | [JHA-144](https://linear.app/jha-res/issue/JHA-144/validate-preliminary-asset-universe) | Which assets are relevant and what is their current status? | Supplies the competitive set for G4 |
 | [JHA-146](https://linear.app/jha-res/issue/JHA-146/map-sjogren-patient-segmentation) | Which patient segments should anchor the decision map? | Supplies the population for G1, G2 and G6 |
 | [JHA-149](https://linear.app/jha-res/issue/JHA-149/map-current-treatment-pathway) | What treatment do patients receive today and where does it fail? | Supplies the comparator and burden baseline for G1, G2 and G6 |
+| [JHA-181](https://linear.app/jha-res/issue/JHA-181/build-report-style-full-decision-deck) | How will the complete analysis become a decision-ready report-style deck? | Owns canonical long-form communication, visual system and deck release |
+| [JHA-182](https://linear.app/jha-res/issue/JHA-182/create-deck-linked-linkedin-article-series) | How will each deck session become a concise public entry point without duplicating the deck? | Owns the article series, teaser-to-deck mapping and publication register |
 
 ## Approval and change control
 
