@@ -1,0 +1,6 @@
+# Linear/GitHub review grouping
+*.md review-documentation
+AGENTS.md review-agent-guidance
+docs/** review-documentation
+.github/** review-documentation
+generated/** review-generated linguist-generated=true

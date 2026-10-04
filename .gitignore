@@ -1,0 +1,46 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# R
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Notebooks and editors
+.ipynb_checkpoints/
+.idea/
+.vscode/
+*.swp
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Large scientific and archive artifacts
+*.h5ad
+*.loom
+*.rds
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+
+# Generated output and caches
+cache/
+tmp/
+dist/
+build/
