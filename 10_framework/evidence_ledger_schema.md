@@ -1,0 +1,180 @@
+# Evidence Ledger schema and claim taxonomy
+
+**Linear issue:** JHA-143  
+**Purpose:** keep every material claim, number, and interpretation traceable, auditable, and re-verifiable from source to memo.
+
+## 1. Operating rules
+
+1. Record one atomic claim per row. Split claims that depend on different sources, populations, outcomes, or confidence judgments.
+2. Assign a stable `claim_id` before a claim enters a memo, table, model, deck, or article. Do not recycle identifiers.
+3. Link every material memo claim to at least one ledger row through `memo_id`, `memo_section`, and `memo_anchor`.
+4. Preserve source wording in `quoted_evidence`; place synthesis or judgment only in `analyst_interpretation`.
+5. Use public information only. Store a stable URL and precise evidence location instead of downloaded third-party files.
+6. Treat absence labels as findings about the search or source, not as proof that an effect does not exist.
+7. Create a new row or mark a row `superseded` when the claim meaning changes. Do not silently overwrite approved evidence.
+
+## 2. Controlled vocabularies
+
+### 2.1 Claim type (`claim_type`)
+
+| Value | Meaning | Test |
+|---|---|---|
+| `fact` | A directly checkable statement reported by a source, including a number, event, design feature, or result. | A reviewer can verify the claim without accepting the source author's explanation. |
+| `company_interpretation` | A sponsor's, developer's, or other interested party's explanation, framing, forecast, or conclusion. | The statement is attributable to that party and is not promoted to independent fact. |
+| `analyst_inference` | The research team's synthesis, comparison, implication, estimate, or judgment. | The reasoning and supporting rows are explicit and another reviewer could disagree. |
+
+Do not combine multiple types in one row. A company-reported number is normally a `fact`; the company's explanation of that number is a separate `company_interpretation` row. An analyst conclusion based on either is a separate `analyst_inference` row.
+
+### 2.2 Evidence directness (`evidence_directness`)
+
+| Value | Meaning |
+|---|---|
+| `direct` | The source measures or documents the same disease, population, intervention, comparator, outcome, timepoint, geography, or transaction element asserted by the claim. |
+| `indirect` | One or more material elements differ and the claim requires extrapolation, analogy, triangulation, or mechanistic reasoning. |
+
+For indirect evidence, identify the mismatch in `analyst_interpretation` or `notes` and reduce confidence when appropriate. Directness is independent of source quality: a direct company statement may still carry bias, while a high-quality adjacent-disease study remains indirect for a Sjögren-specific claim.
+
+### 2.3 Evidence status (`evidence_status`)
+
+Choose exactly one value.
+
+| Value | Use when | Do not use when |
+|---|---|---|
+| `positive` | The evaluable evidence supports the stated direction or threshold. | The result is only the analyst's preference. |
+| `negative` | The relevant outcome was studied, reported, evaluable, and did not support the stated direction or met the defined null/negative rule. | Nothing was found or the outcome was omitted. |
+| `mixed` | Evaluable findings materially differ across endpoints, subgroups, timepoints, or credible sources. | The only problem is uncertainty or missing detail. |
+| `not_found` | A documented, reasonable search did not locate evidence addressing the claim. | A located source omits the item. |
+| `not_reported` | A relevant located source exists, but it does not disclose the required result or detail. | The outcome was explicitly not studied. |
+| `not_studied` | The design, protocol, or authoritative description shows the question or outcome was not investigated. | Study status is merely unknown. |
+| `not_evaluable` | Evidence exists but cannot support a valid judgment because of data quality, incompatible definitions, immature follow-up, missing denominator, or similar limitation. | The source simply omits the result. |
+| `not_applicable` | The field or question does not logically apply to this claim. | The information is missing but should exist. |
+
+Absence-classification decision tree:
+
+```text
+Is the field/question logically applicable?
+  no  -> not_applicable
+  yes -> Was relevant evidence located?
+           no  -> not_found
+           yes -> Was the question/outcome studied?
+                    explicitly no -> not_studied
+                    yes/unclear -> Was the needed result reported?
+                                     no  -> not_reported
+                                     yes -> Can it be validly assessed?
+                                              no  -> not_evaluable
+                                              yes -> positive / negative / mixed
+```
+
+`negative` is an observed evaluable result and must never be used as an absence label.
+
+### 2.4 Confidence (`confidence`)
+
+| Value | Minimum interpretation |
+|---|---|
+| `high` | Direct, internally consistent evidence from strong source(s), with no unresolved contradiction likely to change the decision. |
+| `moderate` | Credible evidence with a material but bounded limitation, indirect component, or minor unresolved discrepancy. |
+| `low` | Sparse, indirect, biased, immature, or conflicting evidence; the claim may change with plausible new information. |
+| `unknown` | Confidence cannot yet be assigned; use only while the row is `draft`. |
+
+Confidence is a reasoned judgment, not a substitute for source type, directness, or verification state. Explain non-obvious ratings in `notes`.
+
+### 2.5 Verification state (`verification_state`)
+
+| Value | Meaning |
+|---|---|
+| `draft` | Entered but not yet checked against the cited location. |
+| `source_checked` | Source, dates, quotation, and evidence location were checked by one reviewer. |
+| `second_reviewed` | A second reviewer checked claim fidelity, taxonomy, and contradiction handling. |
+| `approved` | Ready for use in a released deliverable. |
+| `superseded` | Retained for audit history but replaced by a newer row or evidence state. |
+
+## 3. Field dictionary
+
+Requirement codes: **R** = required for every row; **C** = conditionally required; **O** = optional.
+
+| # | Field | Req. | Definition and validation |
+|---:|---|:---:|---|
+| 1 | `claim_id` | R | Stable unique identifier, recommended format `JHA-143-CLM-0001`. |
+| 2 | `parent_claim_id` | C | Parent or predecessor claim when the row decomposes, qualifies, or supersedes another row. |
+| 3 | `memo_id` | C | Identifier of the memo, deck, table, model, or article using the claim; required before publication. |
+| 4 | `memo_section` | C | Human-readable destination section; required when `memo_id` is populated. |
+| 5 | `memo_anchor` | C | Stable heading, table cell, figure, slide, or paragraph anchor; required when `memo_id` is populated. |
+| 6 | `claim_text` | R | One complete, atomic claim written as it may appear in a deliverable. |
+| 7 | `claim_type` | R | One of `fact`, `company_interpretation`, `analyst_inference`. |
+| 8 | `evidence_status` | R | One controlled status from section 2.3. |
+| 9 | `evidence_directness` | R | `direct` or `indirect`. |
+| 10 | `disease_relevance` | R | `sjogren_direct`, `adjacent_autoimmune`, `general_mechanistic`, or `not_disease_specific`. |
+| 11 | `source_id` | R | Stable source identifier; multiple sources supporting one claim should use separate rows linked by `parent_claim_id` or a shared claim family. |
+| 12 | `source_type` | R | Controlled source class such as `peer_reviewed`, `registry`, `regulatory`, `guideline`, `company`, `conference`, `transaction`, or `other_public`. |
+| 13 | `source_title` | R | Full source or record title. |
+| 14 | `source_publisher` | R | Journal, registry, regulator, company, conference, database, or publisher. |
+| 15 | `source_url` | R | Public stable URL, DOI resolver, registry URL, or archived public page. |
+| 16 | `publication_date` | R | Source publication or last-update date in ISO `YYYY-MM-DD`; use the most precise supported date and explain partial dates in `notes`. |
+| 17 | `access_date` | R | Date the source was accessed, ISO `YYYY-MM-DD`. |
+| 18 | `evidence_location` | R | Precise page, section, table, figure, record field, timestamp, or paragraph locator. |
+| 19 | `quoted_evidence` | C | Minimal exact excerpt or faithful data transcription; required for `fact` and `company_interpretation` unless copyright or format prevents capture. |
+| 20 | `analyst_interpretation` | C | Reasoning that connects evidence to the claim; required for `analyst_inference` and indirect evidence. |
+| 21 | `contradiction_id` | C | Shared identifier grouping rows that conflict, recommended format `CTR-0001`. |
+| 22 | `contradiction_summary` | C | Neutral description of the disagreement; required when `contradiction_id` is populated. |
+| 23 | `contradiction_resolution` | C | `unresolved`, `scope_difference`, `time_update`, `source_precedence`, `definition_difference`, `error_corrected`, or `other`; required when `contradiction_id` is populated. |
+| 24 | `confidence` | R | `high`, `moderate`, `low`, or `unknown`. |
+| 25 | `verification_state` | R | One state from section 2.5. |
+| 26 | `verified_by` | C | Reviewer name or identifier; required from `source_checked` onward. |
+| 27 | `verified_date` | C | ISO date of the latest verification; required from `source_checked` onward. |
+| 28 | `next_review_date` | O | Planned ISO review date for time-sensitive claims. |
+| 29 | `reverification_trigger` | R | Concrete event that forces review, or `none_expected` for stable historical facts. |
+| 30 | `geography` | R | Geography to which the claim applies, or `global`/`not_applicable`. |
+| 31 | `population` | R | Study or decision population, or `not_applicable`. |
+| 32 | `intervention` | R | Intervention, modality, asset, exposure, or `not_applicable`. |
+| 33 | `comparator` | R | Comparator/control, or `none`/`not_applicable`. |
+| 34 | `outcome` | R | Outcome, measure, event, or decision variable. |
+| 35 | `timepoint` | R | Observation horizon/date, or `not_applicable`. |
+| 36 | `notes` | O | Search scope, limitations, confidence rationale, partial-date detail, or audit notes. |
+
+## 4. Contradiction protocol
+
+1. Preserve each conflicting source as its own ledger row; never average away disagreement.
+2. Assign the same `contradiction_id` to all relevant rows and state the conflict neutrally.
+3. Check whether population, definition, endpoint, timepoint, geography, version, or source incentives explain the difference.
+4. Record a controlled `contradiction_resolution`; keep `unresolved` when evidence does not justify precedence.
+5. An unresolved material contradiction normally caps confidence at `low` or `moderate` and must be visible in the consuming memo.
+6. Re-verify all rows in the group when one member is updated or superseded.
+
+## 5. Re-verification triggers
+
+Use event-based triggers that a reviewer can observe, for example:
+
+- trial registry, protocol, publication, abstract, or data-cut update;
+- regulatory decision, label change, safety communication, or guideline revision;
+- company pipeline-status, enrollment, discontinuation, or transaction update;
+- new primary evidence that conflicts with or materially narrows the claim;
+- evidence cutoff change, memo reuse in a new geography/population, or scheduled review date;
+- source URL failure or correction/retraction notice.
+
+## 6. Row integrity and release checks
+
+Before a row becomes `approved`:
+
+- all **R** fields and applicable **C** fields are populated;
+- `source_url`, `publication_date`, `access_date`, and `evidence_location` resolve to the cited evidence;
+- claim wording does not overstate the quotation or data;
+- claim type, directness, disease relevance, evidence status, and confidence are independently assessed;
+- `negative` is supported by an evaluable reported result;
+- missing-evidence states follow the decision tree and include search/source context in `notes`;
+- contradictions are grouped, explained, and carried into the memo where material;
+- analyst inferences link to the factual rows that support them;
+- memo linkage is stable and the consuming artifact exposes the `claim_id` or an unambiguous claim map;
+- dates use ISO format and the row has a concrete re-verification trigger.
+
+Pre-publication ledger checks:
+
+1. Every material statement and number in the artifact maps to at least one non-superseded row.
+2. Every approved row used by the artifact maps back to an exact artifact anchor.
+3. No row used in the release remains `draft` or has `confidence=unknown`.
+4. All due review dates and triggered re-verifications are resolved.
+5. Contradiction groups and low-confidence conclusions are disclosed rather than hidden.
+
+## 7. Template use
+
+`evidence_ledger_template.csv` contains the canonical 36-column header and one clearly marked example row. Delete the example row before production use; retain the header order so validation and downstream imports remain reproducible.
+
