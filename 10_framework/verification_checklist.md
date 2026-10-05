@@ -10,6 +10,10 @@ Use this checklist for each claim family and consuming artifact, alongside the
 relevant workstream, linked from ledger `notes`; no new CSV columns are required.
 Unchecked required items block approval/release. Record justified non-applicability
 explicitly rather than checking an item that was not performed.
+Missing evidence is not non-applicability. A high-impact claim without its required
+second source remains below `approved` unless the documented narrow
+authoritative-fact exception applies; provisional wording, disclosure and lower
+confidence do not satisfy or waive that item.
 
 ## 1. Source and atomic claim
 
@@ -33,6 +37,9 @@ explicitly rather than checking an item that was not performed.
 
 - [ ] High-impact minimum met for the claim class: primary source and relevant
   second source, or the rubric's documented narrow-authoritative-fact exception.
+  If neither is met, leave this item unchecked and keep the claim at its actually
+  completed review state (`source_checked` or `second_reviewed`), outside released
+  claim use, with an owned evidence gap and re-verification trigger.
 - [ ] Separate rows identify each source and supporting claim IDs. Shared
   cohort/trial/release/contract families, incentives and independence are explicit.
 - [ ] Sponsor-only clinical numbers remain `company_interpretation`; conference

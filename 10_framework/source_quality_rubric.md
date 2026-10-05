@@ -95,9 +95,16 @@ JHA-144 registry requirement for confirmed clinical activity.
 
 If the standard cannot be met, narrow and attribute the claim, retain an evidence
 gap and a next-verification trigger, and use low/moderate confidence as justified.
-A reviewer may approve a clearly disclosed provisional claim, but it cannot serve
-as the sole verified premise for a critical gate pass. No critical conclusion may
-rest only on unverified company interpretation.
+A high-impact claim lacking the required second source must remain below
+`approved` unless it meets the documented narrow authoritative-fact exception.
+Keep it at `source_checked` or `second_reviewed` according to the review actually
+performed, and retain it in the working ledger/gap log rather than as a released
+claim. Attribution, narrower wording, a caveat or lower confidence does not waive
+the verification minimum. Reassess impact for the exact narrowed proposition and
+its decision use; do not relabel a still decision-changing claim as low impact to
+bypass the requirement. Approval is possible only after every applicable
+checklist minimum is met. No critical conclusion may rest only on unverified
+company interpretation.
 
 ## 4. Company releases and conference evidence
 
@@ -131,7 +138,9 @@ adjacent-autoimmune extrapolations to Sjögren cannot receive high confidence.
 An adequately documented adjacent-disease result may be high for its own disease;
 the separate Sjögren inference remains indirect. Evidence quantity does not
 override fit, bias or uncertainty. Verification state measures review completion,
-not evidentiary strength; `approved` may still be low confidence with disclosure.
+not evidentiary strength; `approved` may still be low confidence with disclosure
+only after all applicable verification minima are met. Low confidence does not
+authorize provisional approval when a required source is missing.
 
 ## 6. Ledger integration
 
