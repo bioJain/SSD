@@ -33,6 +33,13 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the detailed workflow.
 - Distinguish verified fact, company interpretation, analyst inference, and unknown.
 - Do not commit credentials, protected data, or large analysis binaries.
 
+## Evidence framework
+
+- [Evidence Ledger schema and claim taxonomy](10_framework/evidence_ledger_schema.md)
+- [Source-quality rubric](10_framework/source_quality_rubric.md)
+- [Contradiction-resolution and history protocol](10_framework/contradiction_resolution_protocol.md)
+- [Claim verification and release checklist](10_framework/verification_checklist.md)
+
 ## Status
 
 The repository is initialized. Research deliverables will be added through
