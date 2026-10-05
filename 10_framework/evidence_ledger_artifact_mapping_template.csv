@@ -1,0 +1,3 @@
+mapping_id,claim_id,artifact_id,artifact_type,artifact_version,artifact_section,artifact_anchor,mapping_status,notes
+EXAMPLE-DELETE-ME,EXAMPLE-DELETE-ME,MEMO-EXAMPLE,memo,v1,Methods,methods-evidence-ledger,active,"REMOVE THIS EXAMPLE ROW BEFORE PRODUCTION USE. Add one row for every claim use; repeat claim_id across artifacts and anchors."
+
