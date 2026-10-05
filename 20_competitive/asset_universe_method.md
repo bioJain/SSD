@@ -57,8 +57,12 @@ This protocol resolves scope-register item U-08.
 | `confirmed_active` | Sponsor or regulator evidence dated within 12 months of the cutoff confirms an ongoing program; a current registry is also required for clinical-stage programs when one should exist. |
 | `completed_advancing` | The cited study is complete and the sponsor explicitly states that the asset is advancing, filing or entering another study. |
 | `registry_active_unconfirmed` | A current registry is active/recruiting, but a dated sponsor disclosure was not found or does not identify the exact program. This is not treated as proof of an active corporate program. |
+| `planned_not_started` | The registry is not yet recruiting and no study-start confirmation is available. Planned dates do not establish activity. |
+| `unknown_stale_registry` | Registry status is unknown or stale; study start and completion are unverified. Planned completion dates establish neither completion nor discontinuation. |
 | `completed_status_unclear` | The study completed, but current indication-level intent was not found. Completion is not interpreted as continuation or discontinuation. |
 | `terminated` / `withdrawn` | The registry or sponsor explicitly uses that status. The cause is recorded only when explicitly reported. |
+| `adjacent_activity_unconfirmed` | Sponsor evidence describes adjacent clinical development, but exact trial mapping or current registry activity is unverified. Exclude from verified-active counts. |
+| `adjacent_completed_status_unclear` | A cited adjacent study is complete, but current program intent is unverified. Retain as a historical benchmark. |
 | `adjacent_active` | Current sponsor and registry evidence confirms clinical development in an adjacent autoimmune disease; it remains indirect for Sjögren. |
 
 The latest qualifying evidence wins only when the difference is a time update.
@@ -71,6 +75,8 @@ remain unresolved and cap confidence at `low` or `moderate`.
   approval or commercial value.
 - A positive company release is captured as `company_interpretation` unless the
   underlying result is independently verified.
+- Positive evidence for a termination or withdrawal claim supports that administrative event; it is not a positive or negative efficacy result.
+- Each asset may map to multiple atomic claims. Direct historical and adjacent current claims require separate sources and mappings.
 - A trial may be completed while the program is active; study status and program
   status are separate fields.
 - Sjögren-direct and adjacent-autoimmune evidence are never pooled.
@@ -102,4 +108,22 @@ Re-run the status check at the earliest of:
 - a sponsor pipeline, discontinuation, transaction or regulatory disclosure;
 - a Phase 2/3 readout or first Sjögren cohort disclosure;
 - 2027-01-15 for `confirmed_active` and `adjacent_active` entries;
-- 2026-11-15 for `registry_active_unconfirmed` and unclear entries.
+- 2026-11-15 for `registry_active_unconfirmed`, `planned_not_started`,
+  `unknown_stale_registry`, `adjacent_activity_unconfirmed` and unclear entries.
+
+## Review correction audit
+
+Review of commit `3735525047` corrected GAP-016–018 column alignment,
+separated planned and unknown registry states from active/completed states, and
+removed uncorroborated adjacent activity from verified-active counts. The same
+registry requirement applies to A026/A027 and to the adjacent component of A037.
+CLM-0023–0025 now encode support for termination facts rather than negative
+efficacy. CLM-0037 is retained as superseded; CLM-0039 and CLM-0040 separately
+map the direct withdrawal and sponsor-reported adjacent tibulizumab activity.
+GAP-019 tracks missing registry corroboration in addition to existing gaps.
+
+The evidence cutoff remains 2026-10-04. These are corrections to the existing
+source-checked package, not a new source-access pass or post-cutoff status update.
+
+Reproduce structural and review regression checks with
+`python3 scripts/validate_jha_144.py`.

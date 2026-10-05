@@ -35,7 +35,7 @@ JHA-144-MAP-0033,JHA-144-CLM-0033,JHA-144-ASSET-UNIVERSE,csv,v0.1,asset-row,A033
 JHA-144-MAP-0034,JHA-144-CLM-0034,JHA-144-ASSET-UNIVERSE,csv,v0.1,asset-row,A034,active,"CND261 adjacent status"
 JHA-144-MAP-0035,JHA-144-CLM-0035,JHA-144-ASSET-UNIVERSE,csv,v0.1,asset-row,A035,active,"Daratumumab adjacent status"
 JHA-144-MAP-0036,JHA-144-CLM-0036,JHA-144-ASSET-UNIVERSE,csv,v0.1,asset-row,A036,active,"Mezagitamab adjacent status"
-JHA-144-MAP-0037,JHA-144-CLM-0037,JHA-144-ASSET-UNIVERSE,csv,v0.1,asset-row,A037,active,"Tibulizumab direct/adjacent status"
+JHA-144-MAP-0037,JHA-144-CLM-0039,JHA-144-ASSET-UNIVERSE,csv,v0.1,asset-row,A037,active,Tibulizumab direct Sjögren withdrawal only
 JHA-144-MAP-0038,JHA-144-CLM-0001,JHA-144-METHOD,method,v0.1,Preliminary-readout,direct-late-stage-set,active,"Supports late-stage-field summary"
 JHA-144-MAP-0039,JHA-144-CLM-0002,JHA-144-METHOD,method,v0.1,Preliminary-readout,direct-late-stage-set,active,"Supports late-stage-field summary"
 JHA-144-MAP-0040,JHA-144-CLM-0003,JHA-144-METHOD,method,v0.1,Preliminary-readout,direct-late-stage-set,active,"Supports late-stage-field summary"
@@ -52,3 +52,4 @@ JHA-144-MAP-0050,JHA-144-CLM-0029,JHA-144-METHOD,method,v0.1,Preliminary-readout
 JHA-144-MAP-0051,JHA-144-CLM-0030,JHA-144-METHOD,method,v0.1,Preliminary-readout,adjacent-cell-therapy-set,active,"Supports adjacent modality summary"
 JHA-144-MAP-0053,JHA-144-CLM-0038,JHA-144-ASSET-UNIVERSE,csv,v0.1,asset-row,A035,active,"Daratumumab direct case-level evidence"
 JHA-144-MAP-0052,JHA-144-CLM-0031,JHA-144-METHOD,method,v0.1,Preliminary-readout,adjacent-cell-therapy-set,active,"Supports adjacent modality summary"
+JHA-144-MAP-0054,JHA-144-CLM-0040,JHA-144-ASSET-UNIVERSE,csv,v0.1,asset-row,A037,active,Tibulizumab sponsor-reported adjacent activity; indirect for Sjögren; registry confirmation unresolved
