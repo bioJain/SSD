@@ -2,7 +2,7 @@
 
 **Linear issue:** JHA-142
 
-**Evidence cutoff:** 2026-10-05
+**Evidence cutoff:** 2026-10-04
 
 **Scope:** modality-neutral classification for Sjögren portfolio research, with adjacent-autoimmune evidence explicitly labeled as indirect
 
@@ -24,7 +24,8 @@ The governing rule is:
 No single observation—undetectable blood B cells, an autoantibody decline, a
 clinical response, a drug-free interval, or a naive-dominant returning B-cell
 population—proves immune reset by itself. Classification requires the four-axis
-assessment below and an explicit account of missing evidence.
+assessment below and an explicit account of missing evidence. Clinical benefit
+and biological depletion must be assessed separately [E-06].
 
 The numeric thresholds in this document are prospective analyst cutoffs chosen
 to make comparisons reproducible. They are not validated regulatory surrogates,
@@ -40,7 +41,7 @@ descriptor may be added, but it must not replace the primary category.
 |---|---|---|---|
 | **Functional control** | Disease-relevant B-cell activity is modulated or suppressed without evidence that the regimen meets depletion criteria, or control depends on continuing exposure. | Evaluable pharmacodynamic or clinical evidence showing control of B-cell signaling, survival, trafficking, antibody recycling, cytokine support or downstream activity. | A response during ongoing therapy is not reset. Reduced biomarkers without cell-count evidence are not depletion. |
 | **Transient depletion** | A measurable fall in the prespecified B-cell population meets at least `D1`, but depletion is brief, incomplete, limited to blood, or followed by return without qualifying durable off-treatment control. | Serial cellular measurements with baseline and at least one post-treatment timepoint. | Do not infer tissue effects from blood. Do not infer reconstitution quality from total B-cell return. |
-| **Deep depletion** | The regimen meets `D2` or `D3` and has direct evidence beyond a single peripheral-blood snapshot; durability or reconstitution evidence is insufficient for immune reset. | Prespecified sensitive assay, serial confirmation and at least `T1`; `T2` is preferred. | Deep depletion can occur without clinical benefit, tissue clearance, plasma-cell effect or immune reset. |
+| **Deep depletion** | The regimen meets `D2` or `D3` and at least `T1`; durability or reconstitution evidence is insufficient for immune reset. | Prespecified sensitive assay, serial confirmation and at least `T1`; `T2` is preferred. | Blood-only evidence (`T0`) does not meet this category, even when blood depletion is profound. Deep depletion can occur without clinical benefit, tissue clearance, plasma-cell effect or immune reset. |
 | **Immune reset** | A finite treatment produces deep depletion, followed by documented immune reconstitution and sustained disease control after B-cell return while the patient remains off the reset therapy and protocol-defined rescue/background intensification. | `D2+`, `T2+`, `O3` and `R2+`, plus clinically meaningful control. Evidence must include observations both before and after B-cell reconstitution. | Persistent aplasia alone is not reset. Ongoing maintenance, scheduled redosing, unwithdrawn high-intensity background therapy or absent post-reconstitution follow-up prevents this classification. |
 | **Unproven reset claim** | “Reset,” “reboot,” “reconstitution” or equivalent language is used, but available evidence does not satisfy the immune-reset rule. | A traceable company or investigator claim and an axis-by-axis assessment showing the unmet requirements. | This category is not a negative efficacy judgment. It records a claim-evidence gap. |
 | **Insufficient evidence** | Available public evidence cannot support a defensible assignment to the other biological categories. | Completed documented search and mandatory missing-evidence codes. | Never convert missing evidence into poor performance, no effect or evidence of absence. |
@@ -55,8 +56,9 @@ Apply the following decision order:
    **unproven reset claim**.
 3. If the mechanism controls function without qualifying cellular depletion, or
    requires ongoing exposure, assign **functional control**.
-4. If cellular depletion is demonstrated, assess depth and compartment evidence:
-   assign **transient depletion** or **deep depletion**.
+4. If cellular depletion is demonstrated, assign **deep depletion** only when
+   both `D2+` and `T1+` are met. Otherwise assign **transient depletion** when
+   the observed cellular reduction meets `D1+`.
 5. Upgrade to **immune reset** only when all reset requirements are met. Never
    infer the category by modality class.
 
@@ -73,7 +75,7 @@ can be distorted by changes in other leukocytes.
 
 | Score | Operational criterion |
 |---|---|
-| `D0` | No qualifying depletion: less than 50% reduction from baseline, no cellular measurement, or an evaluable negative result. |
+| `D0` | Evaluable cellular evidence shows less than 50% reduction from baseline or otherwise shows no qualifying depletion. |
 | `D1` | Partial depletion: at least 50% but less than 95% reduction from baseline, or a single profound-depletion observation without serial confirmation. |
 | `D2` | Profound depletion: at least 95% reduction from baseline **or** below the assay lower limit/5 cells per µL, confirmed at two observations at least 28 days apart. |
 | `D3` | Lineage-extending deep depletion: `D2` plus direct depletion evidence for relevant memory B cells and at least one additional pathogenic B-lineage population, such as plasmablasts or a defined autoreactive clone. Plasma-cell and LLPC effects require the separate rules in section 5. |
@@ -83,8 +85,18 @@ Rules:
 - State the marker panel. `CD19+`, `CD20+`, memory B cells, plasmablasts and
   antibody-secreting cells are not interchangeable.
 - A result at the assay floor is reported as “below the assay limit,” not zero.
+- If no cellular measurement was made, do not assign `D0`; score the field with
+  the applicable missing-evidence state (`NF`, `NR`, `NS`, `NE` or `UNK`). Missing
+  core depletion evidence makes the primary classification **insufficient
+  evidence** unless a reset claim is under review, in which case it is
+  **unproven reset claim**. A supported functional-control signal may be recorded
+  as a secondary descriptor while the primary category remains insufficient
+  evidence.
 - A percentage reduction calculated from an already-low baseline is `NE` unless
   the absolute count and assay performance support interpretation.
+- Profound peripheral depletion and later repopulation dominated by naive or
+  immature cells have been observed after rituximab, but those blood findings do
+  not establish tissue depletion or reset [E-01, E-02].
 - Depletion caused by conditioning, corticosteroids or another combination
   component must be attributed to the **regimen** unless component contribution
   is separately demonstrated.
@@ -103,12 +115,14 @@ This axis evaluates observed cellular effects outside peripheral blood.
 Rules:
 
 - Blood depletion never stands in for gland, lymph-node, spleen or bone-marrow
-  depletion.
+  depletion; blood, tonsil, marrow and salivary-gland measurements have shown
+  compartment-specific findings [E-02, E-03, E-04].
 - Salivary flow, ultrasound or serum biomarkers can support `T1`; they do not
   establish cellular depletion.
 - A tissue biopsy must report sampling site, timing, method and evaluability.
   Changes in focus score or cell density must not be interpreted without noting
-  sampling variability.
+  sampling variability. Paired Sjögren salivary-gland biopsies illustrate the
+  value and small-sample limits of direct tissue assessment [E-04].
 - Evidence from another autoimmune disease is **indirect for Sjögren**, even when
   it is direct for the measured compartment in that disease.
 
@@ -136,6 +150,9 @@ Rules:
   not award `O3` without a justified sensitivity analysis.
 - Redosing before relapse censors durability. Redosing after documented relapse
   records the first off-treatment interval but does not support reset.
+- Drug-free control and the return of B cells are separate observations; both
+  need explicit follow-up before durability after reconstitution is claimed
+  [E-07, E-08].
 
 ### 3.4 R — immune-reconstitution quality
 
@@ -152,7 +169,9 @@ repertoire evidence; total count alone is not enough.
 
 Rules:
 
-- A naive-dominant population is compatible with renewal, not proof of tolerance.
+- A naive-dominant population is compatible with renewal, not proof of tolerance;
+  post-depletion repopulation patterns and clinical courses can differ [E-01,
+  E-02].
 - Stable total immunoglobulin or vaccine antibodies can demonstrate preserved
   humoral memory; it does not prove removal of pathogenic clones.
 - Autoantibody decline is supportive only when antigen, assay, kinetics and the
@@ -177,6 +196,10 @@ The following substitutions are prohibited:
 | Company use of “reset” | Analyst classification as immune reset |
 | Evidence in SLE, RA or another disease | Sjögren-direct evidence |
 | No located evidence | Negative result or absence of an effect |
+
+These distinctions are supported by observed differences among peripheral and
+lymphoid compartments, B-cell repopulation phenotypes, and autoantibody versus
+extrinsic-antigen antibody kinetics [E-01, E-02, E-03, E-05].
 
 ## 5. Plasma-cell, LLPC and serology rules
 
@@ -208,15 +231,18 @@ support an interpretation but cannot establish depletion of LLPCs.
 
 - For a CD20-directed regimen, mature plasma cells and LLPCs must be presumed
   **not directly targeted** unless direct evidence demonstrates an effect. CD20
-  biology or an autoantibody fall alone is insufficient.
+  biology or an autoantibody fall alone is insufficient: mature plasma cells
+  lacking CD20 are not directly depleted by anti-CD20 treatment, while measured
+  autoantibody titers can fall [E-05].
 - For CD19-directed regimens, do not assume coverage of CD19-low/negative plasma
-  cells or LLPCs.
+  cells or LLPCs without direct population-level evidence; dual CD19/BCMA
+  targeting has been studied specifically in a small SLE phase 1 cohort [E-09].
 - For BCMA-, CD38- or dual-targeted regimens, target expression and depletion of
   the relevant pathogenic population must still be measured; target choice alone
-  is not outcome evidence.
+  is not outcome evidence [E-09].
 - A fall in one autoantibody with preservation of vaccine/pathogen antibodies may
   indicate selective effects or different source-cell kinetics. Record the mixed
-  result; do not force a global plasma-cell conclusion.
+  result; do not force a global plasma-cell conclusion [E-05].
 
 ## 6. Missing-evidence states
 
@@ -254,7 +280,7 @@ Treat company language as a claim to test, not a classification input.
 1. Capture the exact claim, speaker/publisher, source URL, publication date,
    access date and precise evidence location.
 2. Record the statement type as `company_interpretation` unless the sentence is a
-   directly checkable fact.
+   directly checkable fact, an analyst conclusion, an extrapolation, or unknown.
 3. Decompose compound claims. “Deep tissue depletion and durable immune reset”
    creates separate D, T, O and R claims.
 4. Populate each axis from public evidence. A corporate slide that repeats a
@@ -270,7 +296,7 @@ Permitted language:
 - “The company describes the regimen as a reset.”
 - “Available evidence supports deep peripheral depletion; tissue and
   post-reconstitution durability remain `NR`.”
-- “The reset claim is unproven at the 2026-10-05 cutoff.”
+- “The reset claim is unproven at the 2026-10-04 evidence cutoff.”
 
 Prohibited language:
 
@@ -294,7 +320,7 @@ assessment_id: JHA-142-ASMT-0001
 asset_or_regimen:
 population:
 disease:
-evidence_cutoff: 2026-10-05
+evidence_cutoff: 2026-10-04
 primary_category:
 secondary_descriptor:
 D_score:
@@ -310,7 +336,7 @@ plasma_cell_or_LLPC_evidence:
 clinical_control_definition:
 missing_evidence_codes:
 sjogren_directness: direct | indirect
-statement_type: fact | company_interpretation | analyst_inference
+statement_type: fact | company_interpretation | analyst_inference | extrapolation | unknown
 evidence_grade: A | B | C | D
 confidence: high | moderate | low
 decision_relevant_limitations:
@@ -339,10 +365,12 @@ Observed: profound serial peripheral B-cell depletion; B cells return after
 several months; no paired gland or marrow cellular data; response assessed while
 background therapy continues.
 
-Classification: **deep depletion**, `D2 / T0 / O0 / R1`. Tissue effect is `NS` or
-`NR` depending on the protocol/source. It is not immune reset even if returning
-cells are largely naive, because target-tissue and off-treatment evidence are
-missing.
+Classification: **transient depletion**, `D2 / T0 / O0 / R1`. The depth axis is
+profound in blood, but `T0` is below the minimum `T1` required for the primary
+deep-depletion category. Tissue effect is `NS` or `NR` depending on the
+protocol/source. It is not immune reset even if returning cells are largely
+naive, because target-tissue and off-treatment evidence are missing [E-01,
+E-03].
 
 ### 9.2 Finite CD19 CAR-T in adjacent autoimmune disease
 
@@ -354,14 +382,15 @@ Classification for the studied disease may meet **immune reset** if `T2` and the
 full timing criteria are documented. For a Sjögren decision the evidence remains
 **indirect** and cannot establish Sjögren immune reset. If tissue evidence is only
 indirect, classify **deep depletion with reset-compatible reconstitution**, not
-immune reset.
+immune reset [E-07, E-08].
 
 ### 9.3 Continuous BAFF/APRIL-pathway inhibition
 
-Observed: biomarker and clinical control during continuous dosing without
-qualifying cellular depletion or an off-treatment interval.
+Observed: clinical and B-cell functional control during continuous dosing;
+serial cellular measurements show less than 50% change, and there is no
+off-treatment interval.
 
-Classification: **functional control**, commonly `D0 / T0–T1 / O0 / R0`. The
+Classification: **functional control**, `D0 / T0–T1 / O0 / R0`. The
 classification does not imply weak efficacy; it distinguishes pharmacologic
 control from finite immune reset.
 
@@ -373,7 +402,7 @@ uncontrolled and outside Sjögren.
 
 Classification: at most **unproven reset claim** or **deep depletion with
 reset-compatible features** for a Sjögren assessment. Autoantibody negativity is
-not direct LLPC-depletion evidence.
+not direct LLPC-depletion evidence [E-05, E-09].
 
 ### 9.5 Apparent remission during persistent effector-cell activity
 
@@ -382,7 +411,9 @@ level plausibly capable of ongoing B-cell suppression and B cells have not
 returned.
 
 Classification: **deep depletion with exposure-associated control**, `R0` and no
-`O3`. Persistent aplasia plus remission is not equivalent to reset.
+`O3`, provided `T1+` is met. If tissue reach is `T0`, classify as **transient
+depletion** with exposure-associated control. Persistent aplasia plus remission
+is not equivalent to reset [E-07, E-08].
 
 ## 10. Edge-case rules
 
@@ -398,14 +429,17 @@ Classification: **deep depletion with exposure-associated control**, `R0` and no
 | Delayed tissue sampling | Align tissue timing with the biological claim; otherwise use `NE` rather than carrying forward an earlier result. |
 | B-cell return definition changes across studies | Preserve each protocol threshold and assay. Do not pool return times without harmonization. |
 | Loss to follow-up | Do not count unobserved time as durable remission. Report observed minimum and censoring. |
-| Infections or hypogammaglobulinemia | Record as reconstitution-quality and benefit-risk evidence; disease control does not erase immune incompetence. |
+| Infections or hypogammaglobulinemia | Record as reconstitution-quality and benefit-risk evidence; disease control does not erase immune incompetence [E-05]. |
 | Mixed patients in a cohort | Classify at patient level when possible. If only aggregates exist, use `NE` for claims obscured by heterogeneity. |
 
 ## 11. Public evidence register
 
 The register anchors the framework to public human observations. It does not
 validate the analyst cutoffs. Evidence from non-Sjögren diseases is deliberately
-labeled indirect for a Sjögren decision.
+labeled indirect for a Sjögren decision. The approved evidence cutoff remains
+2026-10-04. Access dates of 2026-10-05 record retrieval for PR verification;
+they do not extend the cutoff or add post-cutoff evidence. Every publication
+listed below predates the cutoff.
 
 | ID | Public source | Publication date | Access date | Evidence location | Sjögren directness | Statement type | Grade | Confidence | Framework use |
 |---|---|---:|---:|---|---|---|:---:|---|---|
