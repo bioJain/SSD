@@ -132,6 +132,12 @@ Requirement codes: **R** = required for every row; **C** = conditionally require
 
 ## 4. Contradiction protocol
 
+Apply the detailed [contradiction-resolution and history protocol](contradiction_resolution_protocol.md),
+[source-quality rubric](source_quality_rubric.md) and
+[verification checklist](verification_checklist.md) from JHA-145. These retain the
+canonical fields and vocabularies; additional review rationale belongs in `notes`
+or a versioned verification record linked from it.
+
 1. Preserve each conflicting source as its own ledger row; never average away disagreement.
 2. Assign the same `contradiction_id` to all relevant rows and state the conflict neutrally.
 3. Check whether population, definition, endpoint, timepoint, geography, version, or source incentives explain the difference.
