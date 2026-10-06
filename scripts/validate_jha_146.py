@@ -61,6 +61,8 @@ for name in ['patient_segmentation_framework.md','segmentation_verification_jha_
     text=(DATA/name).read_text()
     anchor_sets[name]={heading_anchor(h) for h in re.findall(r'^#{1,6} (.+)$',text,re.M)}
     assert '2026-10-04' in text and '2026-10-06' in text
+_,gaps=read('segmentation_gaps_jha_146.csv')
+anchor_sets['segmentation_gaps_jha_146.csv']={r['gap_id'] for r in gaps}
 mapped=set()
 for r in mappings:
     assert r['claim_id'] in by_id
@@ -68,9 +70,28 @@ for r in mappings:
     mapped.add((r['artifact_id'],r['artifact_anchor'],r['claim_id']))
 assert usage<=mapped,'Missing claim use mapping'
 assert {r['claim_id'] for r in mappings}==set(by_id),'Unmapped evidence row'
-_,gaps=read('segmentation_gaps_jha_146.csv')
 for r in gaps:
     assert r['evidence_state']=='not_evaluable'
-    assert r['owner_issue'] in {'JHA-146','JHA-147','JHA-148','JHA-166'}
+    assert r['owner_issue'] in {'JHA-146','JHA-147','JHA-148','JHA-151','JHA-166'}
     assert r['closure_action'] and r['release_effect']
+# Reviewed-commit regressions: valid IDs alone do not establish relevant provenance.
+_,hypotheses=read('biomarker_hypotheses_jha_146.csv')
+hyp_by_id={r['hypothesis_id']:r for r in hypotheses}
+gap_by_id={r['gap_id']:r for r in gaps}
+for hyp,cid,gap,owner,concept in [
+    ('HYP-02','JHA-146-CLM-0012','GAP-08','JHA-151','reserve'),
+    ('HYP-03','JHA-146-CLM-0013','GAP-09','JHA-166','refractory'),
+]:
+    assert hyp_by_id[hyp]['claim_ids']==cid
+    proposal=by_id[cid]
+    assert proposal['claim_type']=='analyst_inference'
+    assert proposal['evidence_status']=='not_evaluable' and proposal['verification_state']=='draft'
+    assert concept in proposal['claim_text'].lower()
+    assert gap in proposal['notes'] and 'not clinical evidence' in proposal['source_title']
+    assert gap_by_id[gap]['owner_issue']==owner
+    assert ('segmentation_gaps_jha_146.csv',gap,cid) in mapped
+lymphoma=by_id['JHA-146-CLM-0006']
+for item in ['Low C3/C4','salivary gland enlargement','lymphadenopathy','Cryoglobulinaemia','Monoclonal gammopathy']:
+    assert item in lymphoma['quoted_evidence'],f'Missing predictor transcription: {item}'
+assert 'Section 4a' in lymphoma['evidence_location'] and 'first five predictor bullets' in lymphoma['evidence_location']
 print(f'PASS: {len(claims)} working claims; {len(mappings)} mappings; {len(gaps)} owned gaps; canonical schemas and cross-file links valid')

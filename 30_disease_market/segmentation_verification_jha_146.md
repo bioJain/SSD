@@ -59,8 +59,14 @@ or comprehensive not-found claim is asserted: hypothesis validity remains
 
 CLM-0009 uses CLM-0003/0004 for the proposed two-axis framework; CLM-0010 uses
 CLM-0006 for a separate lymphoma-risk overlay; CLM-0011 uses CLM-0007/0008 for
-hypothesis-only enrichment. Inferences are indirect, low confidence, and have no
-observed effect estimate. Their `not_applicable` evidence status denotes an
+hypothesis-only enrichment. CLM-0012 and CLM-0013 separately document HYP-02
+and HYP-03 as unvalidated analyst proposals. Their public issue source is scope
+authorization, not observed clinical support; neither uses CLM-0009 as evidence
+for recovery, refractoriness, safety or feasibility. GAP-08/09 state the evidence
+needed to test those propositions. These two rows remain `draft`/`not_evaluable`
+with low confidence, not source-checked clinical findings. All these inferences
+are indirect, low confidence, and have no observed effect estimate.
+For CLM-0009–0011, `not_applicable` evidence status denotes an
 operational proposal rather than a measured result; the hypothesis register's
 `not_evaluable` denotes predictive validity not established by this package.
 
@@ -79,8 +85,27 @@ second sources and original content per JHA-145, document independence, and have
 a distinct reviewer verify before any row is second_reviewed/approved. This
 request does not authorize the writer to self-label a repeated pass as second review.
 
-GAP-01–04 are owned by JHA-146; GAP-05 by JHA-147, GAP-06 by JHA-148 and GAP-07
-by JHA-166. The linked gap register states concrete closure actions. Reverify on
+GAP-01–04 are owned by JHA-146; GAP-05 by JHA-147, GAP-06 by JHA-148, GAP-07/09
+by JHA-166 and GAP-08 by JHA-151. The linked gap register states concrete closure
+actions. Reverify on
 original retrieval, new/corrected criteria or measurement guidance, new prospective
 Sjogren enrichment results, changed cutoff/geography, or before external reuse.
 No scheduled monitoring or publication is initiated by this package.
+
+## Reviewed-commit corrections
+
+Reviewed commit: `748c0329d9`; review addressed on 2026-10-06.
+
+- **4190469711 — accepted:** HYP-02/03 previously pointed to unrelated CLM-0009.
+  Added dedicated unvalidated proposal rows CLM-0012/0013 and gaps GAP-08/09;
+  replaced hypothesis mappings and added precise framework/verification/gap uses.
+  No clinical evidence or validation is manufactured by this correction.
+- **4190469716 — accepted:** CLM-0006 quoted only complement despite naming five
+  categories. Added a minimal faithful transcription of all five categories and
+  a locator for the final predictor bullet list in section 4a. The full guideline
+  was inspected in initial work on 2026-10-06; refresh now failed. Original access
+  and source_checked state are retained; no second-review/approval upgrade.
+
+Regression checks cover hypothesis-specific links, gap owners and complete
+five-category transcription with its locator. These checks establish record
+integrity, not predictive validity or release approval.

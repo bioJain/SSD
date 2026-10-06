@@ -35,8 +35,8 @@ JHA-146-MAP-0033,JHA-146-CLM-0006,segmentation_variables_jha_146.csv,table,v0.1,
 JHA-146-MAP-0034,JHA-146-CLM-0009,segmentation_variables_jha_146.csv,table,v0.1,VAR-14,VAR-14,active,Working draft mapping; claim approval pending.
 JHA-146-MAP-0035,JHA-146-CLM-0009,segmentation_variables_jha_146.csv,table,v0.1,VAR-15,VAR-15,active,Working draft mapping; claim approval pending.
 JHA-146-MAP-0036,JHA-146-CLM-0011,biomarker_hypotheses_jha_146.csv,table,v0.1,HYP-01,HYP-01,active,Working draft mapping; claim approval pending.
-JHA-146-MAP-0037,JHA-146-CLM-0009,biomarker_hypotheses_jha_146.csv,table,v0.1,HYP-02,HYP-02,active,Working draft mapping; claim approval pending.
-JHA-146-MAP-0038,JHA-146-CLM-0009,biomarker_hypotheses_jha_146.csv,table,v0.1,HYP-03,HYP-03,active,Working draft mapping; claim approval pending.
+JHA-146-MAP-0037,JHA-146-CLM-0012,biomarker_hypotheses_jha_146.csv,table,v0.1,HYP-02,HYP-02,active,Working draft mapping; claim approval pending.
+JHA-146-MAP-0038,JHA-146-CLM-0013,biomarker_hypotheses_jha_146.csv,table,v0.1,HYP-03,HYP-03,active,Working draft mapping; claim approval pending.
 JHA-146-MAP-0039,JHA-146-CLM-0011,biomarker_hypotheses_jha_146.csv,table,v0.1,HYP-04,HYP-04,active,Working draft mapping; claim approval pending.
 JHA-146-MAP-0040,JHA-146-CLM-0001,patient_segmentation_framework.md,framework,v0.1,1-population-and-diagnosis-gates,1-population-and-diagnosis-gates,active,Working draft mapping; claim approval pending.
 JHA-146-MAP-0041,JHA-146-CLM-0002,patient_segmentation_framework.md,framework,v0.1,1-population-and-diagnosis-gates,1-population-and-diagnosis-gates,active,Working draft mapping; claim approval pending.
@@ -70,3 +70,9 @@ JHA-146-MAP-0068,JHA-146-CLM-0008,segmentation_verification_jha_146.md,verificat
 JHA-146-MAP-0069,JHA-146-CLM-0009,segmentation_verification_jha_146.md,verification_record,v0.1,inference-and-contradiction-controls,inference-and-contradiction-controls,active,Working draft mapping; claim approval pending.
 JHA-146-MAP-0070,JHA-146-CLM-0010,segmentation_verification_jha_146.md,verification_record,v0.1,inference-and-contradiction-controls,inference-and-contradiction-controls,active,Working draft mapping; claim approval pending.
 JHA-146-MAP-0071,JHA-146-CLM-0011,segmentation_verification_jha_146.md,verification_record,v0.1,inference-and-contradiction-controls,inference-and-contradiction-controls,active,Working draft mapping; claim approval pending.
+JHA-146-MAP-0072,JHA-146-CLM-0012,patient_segmentation_framework.md,framework,v0.1,6-enrichment-hypotheses-and-falsification,6-enrichment-hypotheses-and-falsification,active,Working draft hypothesis-specific mapping; predictive validity and claim approval pending.
+JHA-146-MAP-0073,JHA-146-CLM-0012,segmentation_verification_jha_146.md,verification_record,v0.1,inference-and-contradiction-controls,inference-and-contradiction-controls,active,Working draft hypothesis-specific mapping; predictive validity and claim approval pending.
+JHA-146-MAP-0074,JHA-146-CLM-0012,segmentation_gaps_jha_146.csv,table,v0.1,GAP-08,GAP-08,active,Working draft hypothesis-specific mapping; predictive validity and claim approval pending.
+JHA-146-MAP-0075,JHA-146-CLM-0013,patient_segmentation_framework.md,framework,v0.1,6-enrichment-hypotheses-and-falsification,6-enrichment-hypotheses-and-falsification,active,Working draft hypothesis-specific mapping; predictive validity and claim approval pending.
+JHA-146-MAP-0076,JHA-146-CLM-0013,segmentation_verification_jha_146.md,verification_record,v0.1,inference-and-contradiction-controls,inference-and-contradiction-controls,active,Working draft hypothesis-specific mapping; predictive validity and claim approval pending.
+JHA-146-MAP-0077,JHA-146-CLM-0013,segmentation_gaps_jha_146.csv,table,v0.1,GAP-09,GAP-09,active,Working draft hypothesis-specific mapping; predictive validity and claim approval pending.

@@ -203,7 +203,12 @@ UK guidance is contextual evidence, not a US practice/utilization estimate.
 B-cell-active enrichment, glandular reserve, refractory active systemic study
 wedge, and symptom endotype stratification. Each records a candidate rule,
 clinical validation test, separate commercial interpretation and disconfirming
-result. None is a demonstrated predictive selection rule.
+result. None is a demonstrated predictive selection rule. HYP-02 maps to its dedicated
+analyst-proposal row CLM-0012 and reserve-validation gap GAP-08; HYP-03 maps to
+CLM-0013 and the refractory/safety/feasibility gap GAP-09. The issue scope authorizes
+these research questions but is not clinical evidence for either hypothesis.
+CLM-0009 describes only the two-axis measurement framework and does not support
+glandular recovery or a reset study wedge.
 
 The symptom study identifies groups using five symptom inputs, including anxiety
 and depression (CLM-0007; author abstract). Its trial subgroup findings are
